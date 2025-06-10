@@ -77,16 +77,13 @@
   }
 
 /*проверить, нужен ли*/
-  .logo {
-    display: block;
-    height: auto;
-  }
+
   .main {
    background-color: #F8F8F8;
   }
   
   .services {
-    padding: 16px 0px;
+    padding: 16px 24px;
   }
   
   .services__header {
@@ -162,6 +159,9 @@
   }
   
   .services__text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     margin-bottom: 16px;
     font-family: TT Lakes ;
     font-weight: 400;
@@ -279,9 +279,6 @@
     .header {
       display: none;
   }
-  /* .header__ringht-button {
-    display: flex;
-  } */
 
   .services__bar {
     display: flex;
@@ -289,7 +286,7 @@
     align-items: center;
   }
 
-    .services__left {
+  .services__left {
       display: flex;
       justify-content: start;
       align-items: center;
