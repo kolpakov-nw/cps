@@ -302,6 +302,11 @@
       display: none;
   }
 
+  .services {
+    padding-top: 42px;
+    
+  }
+
   .services__bar {
     display: flex;
     justify-content: space-between;
