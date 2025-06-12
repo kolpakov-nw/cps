@@ -134,6 +134,7 @@
     background: none;
     border: 2px solid transparent;
     border-radius: 6px;
+    font-family: TT Lakes;
     font-size: 16px;
     font-weight: 500;
     color: #7E7E82;
@@ -293,12 +294,13 @@
    
    .services__text-first {
     display: flex;
+    padding: 0;
    } 
 
    .services__text-second {
     display: flex;
     flex-direction: column;
-    padding-left: 16px;
+    padding: 0;
 
 
    }
@@ -406,7 +408,6 @@
     .conteiner__btn {
       display: flex;
       flex-direction: column;
-      padding: 19px;
 
 
     }
