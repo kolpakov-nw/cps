@@ -96,8 +96,10 @@
     background-color: #F8F8F8;
   }
   
-  .services {
-    
+  .services__header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   
   
@@ -142,7 +144,7 @@
 
   .services__btn {
     display: flex;
-    padding: 7px 8px;
+    padding: 7px 12px;
     background: none;
     border: 2px solid transparent;
     border-radius: 6px;
@@ -328,7 +330,7 @@
   .services__image {
     border-radius: 6px;
     width: 360px;
-
+    height: 208px;
   }
 
   .services__more-button{
@@ -350,14 +352,14 @@
   }
 
   .services__content {
-    gap: 45px;
+    gap: 40px;
 
   }
 
   .text__conteiner {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 6px;
   }
 
   .services__highlight {
@@ -391,12 +393,20 @@
     .services__btn-scroll {
       flex-wrap: wrap;
       overflow-x: visible;
+      padding-left: 16px;
       
-
     }
 
-    .services__btn {
+    .services__text {
+      padding-left: 35px;
       
+    }
+
+    .services__more-button {
+      width: 100%;
+      font-size: 16px;
+      gap: 16px;
+      padding-left: 33px;
     }
 
     .header__bar-button {
