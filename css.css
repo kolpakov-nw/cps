@@ -134,6 +134,11 @@
     flex-direction: column;
   }
 
+  .services__btn-list {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
 
   .services__btn {
     display: flex;
