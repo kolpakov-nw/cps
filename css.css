@@ -249,10 +249,7 @@
       align-items: center;
       gap: 16px;
    }
-
-   .header__nav{
-    margin-left: 24px;
-  }
+   
    .header__second-button {
     display: flex;
     align-items: center;
