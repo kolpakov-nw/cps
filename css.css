@@ -623,6 +623,69 @@
   .price__static-table {
     display: none;
   }
+  .services__add-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .add__info-text {
+    letter-spacing: .2px;
+    line-height: 20px;
+    max-height: 138px;
+    min-width: 288px;
+    padding: 16px 16px 0 16px;
+    font-family: "TT Lakes";
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .add__info-button {
+    font-family: "TT Lakes";
+    align-items: center;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: center;
+    letter-spacing: -0.2px;
+    line-height: 24px;
+    max-height: 55px;
+    max-width: 208px;
+    padding-left: 16px;
+    border: none;
+    background: none;
+    text-align: left;
+  }
+  .info__btn {
+    position: absolute;
+  }
+
+  .footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    font-family: "TT Lakes";
+    color: #7e7e82;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+  .footer__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 24px;
+    padding-top: 40px;
+
+  }
+  .footer__info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 24px;
+    padding-top: 40px;
+  }
+  .text__privacy-policy {
+    padding-left: 24px;
+  }
 
 
   @media (min-width: 768px) {
@@ -831,6 +894,10 @@
     border: none;
   }
 
+  .price__header {
+    padding: 0
+    background: linear-gradient(90deg, #f8f8f8, #fff 98.61%);
+
  
 
   @media (min-width: 1120px) {
@@ -989,6 +1056,9 @@
       grid-template-columns: minmax(250px, 1fr) 120px 120px 140px;
       padding: 16px 24px;
     }
+    .price__header {
+      padding: 0
+      background: linear-gradient(90deg, #f8f8f8, #fff 98.61%);
   
   }
 }
