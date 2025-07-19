@@ -1,4 +1,26 @@
-const swiper = new Swiper('.footer__slider.swiper', {
+const brandsSwiper = new Swiper('.brands__slider.swiper', {
+    slidesPerView: 'auto',
+    slidesOffsetBefore: 16, 
+    slidesOffsetAfter: 16,
+    spaceBetween: 16,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+  });
+
+  const tehnixSwiper = new Swiper('.tehnix__slider.swiper', {
+    slidesPerView: 'auto',
+    slidesOffsetBefore: 16, 
+    slidesOffsetAfter: 16,
+    spaceBetween: 16,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+  });
+
+  const priceSwiper = new Swiper('.price__slider.swiper', {
     slidesPerView: 'auto',
     slidesOffsetBefore: 16, 
     slidesOffsetAfter: 16,
@@ -10,21 +32,21 @@ const swiper = new Swiper('.footer__slider.swiper', {
   });
 
   document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.querySelector('.read__more-btn');       // Кнопка
-    const slideStatik = document.querySelector('.slide__statik');      // Блок с логотипами
+    const toggleBtn = document.querySelector('.read__more-btn'); // Кнопка
+    const brendsSlideStatik = document.querySelector('.brends__slide-statik'); // Блок с логотипами
   
     toggleBtn.addEventListener('click', () => {
-      slideStatik.classList.toggle('expanded');  // Переключаем класс раскрытия
+      brendsSlideStatik.classList.toggle('expanded'); // Переключаем класс
   
-      // Меняем текст или иконку кнопки, если надо
-      if (slideStatik.classList.contains('expanded')) {
-        // Например, меняем иконку на "свернуть"
-        toggleBtn.querySelector('img').src = './img/NoReadMore.svg';
-        toggleBtn.querySelector('img').alt = 'свернуть';
+      // Меняем иконку в кнопке
+      const img = toggleBtn.querySelector('img');
+  
+      if (brendsSlideStatik.classList.contains('expanded')) {
+        img.src = './img/NoReadMore.svg';
+        img.alt = 'свернуть';
       } else {
-        // Возвращаем "читать далее"
-        toggleBtn.querySelector('img').src = './img/ReadMore.svg';
-        toggleBtn.querySelector('img').alt = 'читать далее';
+        img.src = './img/ReadMore.svg';
+        img.alt = 'читать далее';
       }
     });
   });
