@@ -64,11 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (hiddenText.classList.contains("expanded")) {
       buttonText.textContent = "Свернуть";
-      icon.src = "./img/collapse.png"; // или свёрнутая иконка
+      icon.src = "./img/expand.png"; 
       icon.alt = "Свернуть";
     } else {
       buttonText.textContent = "Читать далее";
-      icon.src = "./img/expand.png"; // или раскрытая иконка
+      icon.src = "./img/expand.png"; 
       icon.alt = "Читать далее";
     }
   });
