@@ -9,13 +9,13 @@
 </head>
 <body>
 
-  <input type="checkbox" id="menu-toggle" hidden>
+  <!-- <input type="checkbox" id="menu-toggle" hidden> -->
   
   <header class="header">
     <nav class="header__nav">
-      <label for="menu-toggle" class="header__button">
+      <button id="burger-open" class="header__button">
         <img src="./img/Burger.svg" alt="Бургер меню" class="menu__icon">
-      </label>
+      </button>
       <img src="./img/Group.svg" alt="Логотип CPS" class="logo">
       <div class="divider"> 
         <img src="./img/divider.png" alt="divider" class="divider">
@@ -51,58 +51,56 @@
   </header>
 
 <div class="overlay"></div>
+
 <nav class="burger-menu">
   <div class="burger-menu__main">
-  <div class="burger-menu__header">
-    <div class="burger-menu__icon">
-      <label for="menu-toggle" class="burger-menu__close">
-        <img src="./img/burger-close.svg" alt="Закрыть меню">
-      </label>
-      <img src="./img/Group.svg" alt="Логотип CPS" class="logo">
+    <div class="burger-menu__header">
+      <div class="burger-menu__icon">
+        <button id="burger-close" class="header__button" aria-label="Закрыть меню">
+          <img src="./img/burger-close.svg" alt="Закрыть меню">
+        </button>
+        <img src="./img/Group.svg" alt="Логотип CPS" class="logo">
+      </div>
+      <button class="search" aria-label="Поиск">
+        <img src="./img/search.svg" alt="поиск" class="search">
+      </button>
     </div>
-    <button class="search"> 
-    <img src="./img/search.svg" alt="поиск" class="search">
-    </button>
-  </div>
-  <div class="burger-menu__nav">
-    <div class="burger-menu-btn">
-          <div class="burger-menu__btn-active">
+    <div class="burger-menu__nav">
+      <div class="burger-menu-btn">
+        <div class="burger-menu__btn-active">
           <div class="burger-menu__highlight"></div>
           <button class="burger-menu__btn">Ремонт техники</button>
-          </div>
-          <button class="burger-menu__btn">Услуги и сервисы</button>
-          <button class="burger-menu__btn">Корпаротивным клиентам</button>
-          <button class="burger-menu__btn">Продовцам техники</button>
-          <button class="burger-menu__btn">Партнерам</button>
-          <button class="burger-menu__btn">Производителям</button>
-          <button class="burger-menu__btn">Наши сервисные центры</button>
-          <button class="burger-menu__btn">Контакты</button>
-     </div>
-     </div>
+        </div>
+        <button class="burger-menu__btn">Услуги и сервисы</button>
+        <button class="burger-menu__btn">Корпоративным клиентам</button>
+        <button class="burger-menu__btn">Продавцам техники</button>
+        <button class="burger-menu__btn">Партнерам</button>
+        <button class="burger-menu__btn">Производителям</button>
+        <button class="burger-menu__btn">Наши сервисные центры</button>
+        <button class="burger-menu__btn">Контакты</button>
+      </div>
     </div>
   </div>
-   <div class="burger-menu__footer">
+  <div class="burger-menu__footer">
     <div class="burger-menu__footer-button">
-      <button class="footer__button">
-      <img src="./img/call.svg" alt="Позвонить"/>
+      <button class="footer__button" aria-label="Позвонить">
+        <img src="./img/call.svg" alt="Позвонить">
       </button>
-      <button class="footer__button ">
-      <img src="./img/chat.svg" alt="Чат"/>
+      <button class="footer__button" aria-label="Чат">
+        <img src="./img/chat.svg" alt="Чат">
       </button>
-      <button class="footer__button">
-      <img src="./img/profile.svg" alt="Профиль"/>
+      <button class="footer__button" aria-label="Профиль">
+        <img src="./img/profile.svg" alt="Профиль">
       </button>
     </div>
     <a class="burger-menu__mail" href="mailto:mail@cps.com">mail@cps.com</a>
     <a class="burger-menu__phone" href="tel:88008908900">8 800 890 8900</a>
-
     <div class="burger-menu__languages">
       <button class="burger-menu__lang-button burger-menu__lang-button--active">RU</button>
-      <button class="burger-menu__lang-button" >EN</button>
+      <button class="burger-menu__lang-button">EN</button>
       <button class="burger-menu__lang-button">CH</button>
     </div>
   </div>
-
 </nav>
 
   
@@ -472,8 +470,7 @@
   
                   <div class="price__table-column">
                     <span class="price__table-service"
-                      >Замена полифонического динамика</span
-                    >
+                      >Замена полифонического динамика</span>
                     <span class="price__table-price">1000 ₽</span>
                     <span class="price__table-time">30–120 мин</span>
                     <button class="price__table-button">
