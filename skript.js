@@ -53,6 +53,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.querySelector('.tehnix__more-btn');
+  const tehnixSlides = document.querySelectorAll('.tehnix__slide-statik .tehnix__slide');
+  const step = 3;
+  let currentIndex = step;
+  let expanded = false;
+
+  if (toggleBtn && tehnixSlides.length) {
+    tehnixSlides.forEach((slide, i) => {
+      slide.classList.toggle('hidden', i >= step);
+    });
+
+    toggleBtn.addEventListener('click', () => {
+      if (!expanded) {
+        const nextIndex = currentIndex + step;
+        for (let i = currentIndex; i < nextIndex && i < tehnixSlides.length; i++) {
+          tehnixSlides[i].classList.remove('hidden');
+        }
+        currentIndex += step;
+
+        if (currentIndex >= tehnixSlides.length) {
+          toggleBtn.querySelector('img').src = './img/NoReadMore.svg';
+          toggleBtn.querySelector('img').alt = 'свернуть';
+          expanded = true;
+        }
+      } else {
+        tehnixSlides.forEach((slide, i) => {
+          slide.classList.toggle('hidden', i >= step);
+        });
+        currentIndex = step;
+        toggleBtn.querySelector('img').src = './img/ReadMore.svg';
+        toggleBtn.querySelector('img').alt = 'читать далее';
+        expanded = false;
+      }
+    });
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const readMoreBtn = document.getElementById("content__text-more");
   const hiddenText = document.querySelector(".content__text-second");
@@ -108,4 +146,87 @@ document.addEventListener('DOMContentLoaded', function () {
 
   checkWidthAndOpenMenu();
   window.addEventListener('resize', checkWidthAndOpenMenu);
+
 });
+
+(function () {
+  const body  = document.body;
+  const root  = document.getElementById('modal-root');
+  if (!root) return;
+
+  const overlay    = document.querySelector('.overlay');
+  const burgerMenu = document.querySelector('.burger-menu');
+
+  const modals = {
+    chat: root.querySelector('[data-modal="chat"]'),
+    call: root.querySelector('[data-modal="call"]')
+  };
+
+  const chatBtn = document.querySelector('[data-open="chat"], .chat');
+  const callBtn = document.querySelector('[data-open="call"], .call');
+
+  function openModal(type) {
+    if (!modals[type]) return;
+    root.classList.add('active');
+    root.classList.remove('hidden');
+
+    modals[type].classList.remove('hidden');
+    requestAnimationFrame(() => modals[type].classList.add('active'));
+
+    body.classList.add('modal-open');
+    overlay?.classList.add('overlay--visible');
+    modals[type].setAttribute('aria-hidden', 'false');
+  }
+
+  function closeModal(type) {
+    if (!modals[type]) return;
+    modals[type].classList.remove('active');
+
+    setTimeout(() => {
+      modals[type].classList.add('hidden');
+      modals[type].setAttribute('aria-hidden', 'true');
+
+      const allHidden = Object.values(modals).every(m => m.classList.contains('hidden'));
+      if (allHidden) {
+        root.classList.remove('active');
+        root.classList.add('hidden');
+        body.classList.remove('modal-open');
+
+        if (!burgerMenu?.classList.contains('burger-menu--open')) {
+          overlay?.classList.remove('overlay--visible');
+        }
+      }
+    }, 500);
+  }
+
+  chatBtn?.addEventListener('click', () => openModal('chat'));
+  callBtn?.addEventListener('click', () => openModal('call'));
+
+  root.addEventListener('click', (e) => {
+    const closer = e.target.closest('[data-close],[close]');
+    if (closer) {
+      const win = closer.closest('.modal-window');
+      if (win?.dataset.modal) closeModal(win.dataset.modal);
+    }
+  });
+
+  overlay?.addEventListener('click', () => {
+    Object.keys(modals).forEach(closeModal);
+    if (burgerMenu?.classList.contains('burger-menu--open')) {
+      burgerMenu.classList.remove('burger-menu--open');
+      document.body.classList.remove('no-scroll');
+      overlay.classList.remove('overlay--visible');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      Object.keys(modals).forEach(closeModal);
+      if (burgerMenu?.classList.contains('burger-menu--open')) {
+        burgerMenu.classList.remove('burger-menu--open');
+        document.body.classList.remove('no-scroll');
+        overlay?.classList.remove('overlay--visible');
+      }
+    }
+  });
+})();

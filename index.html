@@ -328,10 +328,55 @@
                 <img src="./img/go.svg" alt="Перейти" />
               </button>
             </div>
-            
            </div>
               <div class="swiper-pagination "></div>
             </div>
+         </div>
+          <div class="tehnix__slide-statik">
+                <div class="tehnix__slide">
+                  <span class="services__text">Ремонт ноутбуков</span>
+                  <button class="slide__btn">
+                    <img src="./img/go.svg" alt="Перейти" />
+                  </button>
+                </div>
+                <div class="tehnix__slide">
+                  <span class="services__text">Ремонт планшетов</span>
+                  <button class="slide__btn">
+                    <img src="./img/go.svg" alt="Перейти" />
+                  </button>
+                </div>
+                <div class="tehnix__slide">
+                  <span class="services__text">Ремонт ПК</span>
+                  <button class="slide__btn">
+                    <img src="./img/go.svg" alt="Перейти" />
+                  </button>
+                </div>
+                <div class="tehnix__slide">
+                  <span class="services__text">Ремонт мониторов</span>
+                  <button class="slide__btn">
+                    <img src="./img/go.svg" alt="Перейти" />
+                  </button>
+                </div>
+                <div class="tehnix__slide">
+                  <span class="services__text">Ремонт мониторов</span>
+                  <button class="slide__btn">
+                    <img src="./img/go.svg" alt="Перейти" />
+                  </button>
+                </div>
+                <div class="tehnix__slide">
+                  <span class="services__text">Ремонт мониторов</span>
+                  <button class="slide__btn">
+                    <img src="./img/go.svg" alt="Перейти" />
+                  </button>
+                </div>
+                
+          </div>
+          
+      </div>
+      <button class="tehnix__more-btn">
+        <img src="./img/ReadMore.svg" alt="читать далее">
+      </button>
+        
             <div class="services__price-hedear">
               <div class="price__header">
                   <h2 class="price__header-title">Цены на услуги</h2>    
@@ -525,8 +570,57 @@
         </p>
       </div>
     </div>
-  </main>
 
+
+  <div class="modal hidden" id="modal-root">
+  <div class="modal-window hidden" id="modal-window_chat" data-modal="chat" role="dialog" aria-modal="true">
+    <main class="modal-window__main">
+      <div class="modal_header">
+        <button class="modal__close" close>
+          <img src="./img/burger-close.svg" alt="Закрыть">
+        </button>
+        <h1 class="text modal-window__title">Обратная связь</h1>
+      </div>
+      <div class="modal-window__container">
+        <input class="modal-window__input" type="text" placeholder="Имя">
+        <input class="modal-window__input" type="tel" placeholder="Телефон">
+        <input class="modal-window__input" type="email" placeholder="Электронная почта">
+        <textarea class="modal-window__input modal-window__input_down" placeholder="Сообщение"></textarea>
+        <p class="modal-window__text">
+          Нажимая “отправить”, вы даете согласие на
+          <span class="modal-window__text modal-window__text_pink">обработку персональных данных</span>
+          и соглашаетесь с нашей
+          <span class="modal-window__text modal-window__text_pink">политикой конфиденциальности</span>
+        </p>
+      </div>
+    </main>
+    <button class="button button_send">
+      <img src="./img/Rectangle.svg" class="swiper-price__goside" alt="Отправить">
+    </button>
+  </div>
+
+  <div class="modal-window hidden" id="modal-window_call" data-modal="call" role="dialog" aria-modal="true">
+    <main class="modal-window__main modal-window__main_order-call">
+      <div class="modal_header">
+        <button class="modal__close" close>
+          <img src="./img/burger-close.svg" alt="Закрыть">
+        </button>
+        <h1 class="text modal-window__title">Заказать звонок</h1>
+      </div>
+      <div class="modal-window__container">
+        <input class="modal-window__input" type="tel" placeholder="Телефон">
+        <p class="modal-window__text">
+          Нажимая “отправить”, вы даете согласие на
+          <span class="modal-window__text modal-window__text_pink">обработку персональных данных</span>
+          и соглашаетесь с нашей
+          <span class="modal-window__text modal-window__text_pink">политикой конфиденциальности</span>
+        </p>
+      </div>
+    </main>
+    <button class="button button_send">
+      <img src="./img/Rectangle.svg" class="swiper-price__goside" alt="Отправить">
+    </button>
+  </div>
   </main>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./skript.js"></script>
