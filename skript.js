@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+
 (function () {
   const body  = document.body;
   const root  = document.getElementById('modal-root');
@@ -162,8 +163,11 @@ document.addEventListener('DOMContentLoaded', function () {
     call: root.querySelector('[data-modal="call"]')
   };
 
-  const chatBtn = document.querySelector('[data-open="chat"], .chat');
-  const callBtn = document.querySelector('[data-open="call"], .call');
+  const chatBtns = document.querySelectorAll('[data-open="chat"], .chat');
+  const callBtns = document.querySelectorAll('[data-open="call"], .call');
+
+  chatBtns.forEach(btn => btn.addEventListener('click', () => openModal('chat')));
+  callBtns.forEach(btn => btn.addEventListener('click', () => openModal('call')));
 
   function openModal(type) {
     if (!modals[type]) return;
@@ -198,9 +202,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }, 500);
   }
-
-  chatBtn?.addEventListener('click', () => openModal('chat'));
-  callBtn?.addEventListener('click', () => openModal('call'));
 
   root.addEventListener('click', (e) => {
     const closer = e.target.closest('[data-close],[close]');
