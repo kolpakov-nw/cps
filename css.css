@@ -1006,8 +1006,14 @@
    .content__text-second {
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding: 0 !important;
    }
+   .content__text-third {
+    display: none;
+  }
+  .content__text-second.expanded .content__text-third {
+    display: inline; 
+  }
 
    .services__tehnix {
     display: flex;
@@ -1025,14 +1031,7 @@
     text-transform: uppercase;
     color: #7E7E82;
   }
-
-   .content__text-second.expanded, .content__text-third.expanded {
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 0;
-  }
-
-
+  
    .content__image-wrapper {
     display: flex;
    }
@@ -1221,7 +1220,7 @@
     background: linear-gradient(90deg, #f8f8f8, #fff 98.61%);
   }
 
-  
+
   @media (min-width: 1120px) {
 
   .header {
