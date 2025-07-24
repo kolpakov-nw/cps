@@ -195,13 +195,11 @@ document.addEventListener('DOMContentLoaded', function () {
         root.classList.remove('active');
         root.classList.add('hidden');
         body.classList.remove('modal-open');
-
-        if (!burgerMenu?.classList.contains('burger-menu--open')) {
-          overlay?.classList.remove('overlay--visible');
-        }
+        overlay?.classList.remove('overlay--visible');
       }
     }, 500);
   }
+  
 
   root.addEventListener('click', (e) => {
     const closer = e.target.closest('[data-close],[close]');
@@ -211,23 +209,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  overlay?.addEventListener('click', () => {
-    Object.keys(modals).forEach(closeModal);
-    if (burgerMenu?.classList.contains('burger-menu--open')) {
-      burgerMenu.classList.remove('burger-menu--open');
-      document.body.classList.remove('no-scroll');
-      overlay.classList.remove('overlay--visible');
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      Object.keys(modals).forEach(closeModal);
-      if (burgerMenu?.classList.contains('burger-menu--open')) {
-        burgerMenu.classList.remove('burger-menu--open');
-        document.body.classList.remove('no-scroll');
-        overlay?.classList.remove('overlay--visible');
-      }
-    }
-  });
 })();

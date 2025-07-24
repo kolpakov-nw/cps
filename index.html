@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CPS</title>
-  <link rel="stylesheet" href="./css.css">
+  <!-- <link rel="stylesheet" href="./css.css"> -->
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/768.css">
+  <link rel="stylesheet" href="./css/1120.css">
+  <link rel="stylesheet" href="./css/1440.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
@@ -25,16 +29,16 @@
     <nav class="header__left-nav">
       <div class="header__second-button">
         <button class="header__button">
-          <img src="./img/call.svg" alt="Позвонить" class="call"/>
+          <img src="./img/call.svg" data-open='call' alt="Позвонить" class="call"/>
         </button>
       <button class="header__button ">
-          <img src="./img/chat.svg" alt="Чат" class="chat"/>
+          <img src="./img/chat.svg" data-open='chat' alt="Чат" class="chat"/>
       </button>
       <button class="header__button">
           <img src="./img/profile.svg" alt="Профиль" class="profile"/>
       </button>
       </div>
-      
+    
       <div class="divider_second">
           <img src="./img/divider.png" alt="divider"/>
       </div>
@@ -579,7 +583,10 @@
         <button class="modal__close" close>
           <img src="./img/burger-close.svg" alt="Закрыть">
         </button>
+        <div class="modal_header__title-row">
+          <span class="modal-window__highlight"></span>
         <h1 class="text modal-window__title">Обратная связь</h1>
+      </div>
       </div>
       <div class="modal-window__container">
         <input class="modal-window__input" type="text" placeholder="Имя">
@@ -605,7 +612,10 @@
         <button class="modal__close" close>
           <img src="./img/burger-close.svg" alt="Закрыть">
         </button>
+        <div class="modal_header__title-row">
+        <span class="modal-window__highlight"></span>
         <h1 class="text modal-window__title">Заказать звонок</h1>
+      </div>
       </div>
       <div class="modal-window__container">
         <input class="modal-window__input" type="tel" placeholder="Телефон">
@@ -623,6 +633,10 @@
   </div>
   </main>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="./skript.js"></script>
+<!-- <script src="./skript.js"></script> -->
+<script src="./js/swiper.js"></script>
+<script src="./js/button.js"></script>
+<script src="./js/burger.js"></script>
+<script src="./js/modal.js"></script>
 </body>
 </html>
